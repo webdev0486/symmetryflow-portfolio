@@ -1,5 +1,3 @@
-# symmetryflow-portfolio
-
 # SymmetryFlow — Portfolio Site
 
 A single-page portfolio site for **SymmetryFlow**, a Blender addon for vertex weight mirroring and symmetry diagnostics on rigged character meshes.
@@ -37,4 +35,4 @@ Served via GitHub Pages from the `main` branch root. Any push to `main` updates 
 
 ## License
 
-Site content © the SymmetryFlow project. Not for redistribution.
+© Dev.Luv.Studios. All rights reserved. Site content and screenshots may not be reused without permission.
