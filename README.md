@@ -54,8 +54,9 @@ In order, because the page argues rather than lists:
    at all: 296 weights back to 438.
 6. **What it cannot do** — three limitations stated plainly rather than buried:
    it cannot make an asymmetric mesh symmetrical (Robust Asymmetric Fallback
-   recovers at most a measured 44%), vertex counts may differ on faces, and hair
-   cards take minutes to analyse.
+   recovers what a strict counterpart check would refuse, as much as the
+   geometry allows — how much depends on the mesh), vertex counts may differ on
+   faces, and hair cards take minutes to analyse.
 7. **Compatibility** — the two downloads, and the Blender 5.0.0/5.0.1 warning.
 
 Features the add-on has but the page does not argue — UV-space mirroring,
@@ -63,9 +64,14 @@ Auto-Clean Micro-Noise, rest-pose enforcement, custom naming patterns — are in
 the product listing and the shipped manual. The page is deliberately shorter
 than the feature list.
 
-Every figure quoted on it — 221 weights, 296 → 438, 52/52, the 44% ceiling on
-Robust Asymmetric Fallback — was read back off the mesh by the recording harness
-at the moment the take was made, and matches the product listing.
+Every figure quoted on it — 221 weights, 296 → 438, 52/52 — was read back off
+the mesh by the recording harness at the moment the take was made, and matches
+the product listing.
+
+Those numbers describe the takes on screen, which is why they can be stated
+flatly. A recovery PERCENTAGE cannot: how much Robust Asymmetric Fallback gets
+back is a property of the mesh, not of the add-on, so the page says what the
+option does rather than quoting a share measured on our own fixtures.
 
 ## Status
 
