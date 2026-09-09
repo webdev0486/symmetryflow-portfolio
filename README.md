@@ -16,7 +16,7 @@ This repo hosts the marketing/showcase page only — it does not contain the Sym
     └── *.png           # the 4K marketing slides, kept for the Superhive gallery
 ```
 
-`assets/site/` is 3.2 MB in total. The demo clips are H.264 with a VP9 fallback
+`assets/site/` is 3.7 MB in total. The demo clips are H.264 with a VP9 fallback
 rather than GIF — the same footage costs about a fourteenth of the bytes per
 second of playback in that format, measured on this material.
 
@@ -33,31 +33,36 @@ completely uninstalled, and Blender fixed it in 5.1.
 
 ## What the page covers
 
-In order, because the page argues rather than lists:
+In order, because the page argues rather than lists. Every figure on the page
+is a clip — eleven of them, one per recorded take, none used twice:
 
 1. **The problem** — Blender's mirror is coordinate-based and all-or-nothing, so
    it stops at the first vertex that is not an exact spatial twin. On a
-   character that is the eyelids, lips, ears, teeth, brows and lashes. Shown as
-   a before/after pair on one eyelid group.
+   character that is the eyelids, lips, ears, teeth, brows and lashes.
+   *(`face_problem`; the hero above it is `restrict_lash`.)*
 2. **Two matching engines, chosen automatically** — topological (walks edge
    connectivity, so it survives posed meshes and shape keys) and spatial KD-tree
    (O(log N), for islands and shell-split geometry), with Auto-Detect picking
-   per group.
+   per group. Three cards, no clip.
 3. **The verification layer** — the L/R Balance panel reporting each pair as
    Balanced, Mismatched or Distorted. The verdict comes from the same function
    Quick Fix acts on, so report and repair cannot contradict each other. This is
-   the part no competitor screenshot has, and the page says so.
-4. **Four demos**, as video: Mirror All L/R Groups rebuilding 37 deleted groups,
-   Mirror Active Group repairing a damaged calf, a mirror landing on a rig that
-   is out of rest pose, and the panel naming a mismatched eyelid pair.
-5. **The posed-rig case** on its own, because a coordinate mirror cannot do it
-   at all: 296 weights back to 438.
-6. **What it cannot do** — three limitations stated plainly rather than buried:
-   it cannot make an asymmetric mesh symmetrical (Robust Asymmetric Fallback
-   recovers what a strict counterpart check would refuse, as much as the
-   geometry allows — how much depends on the mesh), vertex counts may differ on
-   faces, and hair cards take minutes to analyse.
-7. **Compatibility** — the two downloads, and the Blender 5.0.0/5.0.1 warning.
+   the part no competitor screenshot has, and the page says so. *(`quickfix`.)*
+4. **The whole rig at once** — Mirror All L/R Groups rebuilding 37 deleted
+   groups in one press, `L: 0` to `L: 37`. *(`batch`.)*
+5. **Four options, and what each one changes** — each clip mirrors the same
+   group twice, unticked then ticked, so what you see is the difference the
+   option makes. *(`layered_confine`, `interpolate`, `clean`, `invert`.)*
+6. **The posed-rig case** on its own, because a coordinate mirror cannot do it
+   at all: 296 weights back to 438. *(`posed`.)*
+7. **When there is nothing to copy from** — a centre-line group spans both sides,
+   so the fix is to mirror it onto itself: 342 back to 684. *(`single_RtoL`.)*
+8. **What it cannot do** — three limitations stated plainly rather than buried:
+   it cannot make an asymmetric mesh symmetrical, vertex counts may differ on
+   faces, and hair cards take minutes to analyse. The clip beneath them is
+   Robust Asymmetric Fallback, filed with the limits because what is useful
+   about it is where it stops. *(`asymmetric`.)*
+9. **Compatibility** — the two downloads, and the Blender 5.0.0/5.0.1 warning.
 
 Features the add-on has but the page does not argue — UV-space mirroring,
 Auto-Clean Micro-Noise, rest-pose enforcement, custom naming patterns — are in
