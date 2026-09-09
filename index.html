@@ -362,7 +362,7 @@
     <div class="three">
       <div class="limit">
         <h3>It cannot make an asymmetric mesh symmetrical.</h3>
-        <p>Where one side has no matching vertex, no tool can place a weight exactly. SymmetryFlow names those groups instead of guessing, and Robust Asymmetric Fallback recovers what a strict counterpart check would otherwise refuse &mdash; as much as the geometry allows. How much that comes to depends entirely on your mesh.</p>
+        <p>Where one side has no matching vertex, no tool can place a weight exactly. SymmetryFlow names those groups instead of guessing. Robust Asymmetric Fallback closes most of the rest: on the add-on&rsquo;s own asymmetric fixture it takes the mirrored side from 56% of the source&rsquo;s weighted vertices to 99%. What it cannot close is the genuine remainder &mdash; vertices with no counterpart to receive a weight at all.</p>
       </div>
       <div class="limit">
         <h3>Vertex counts may differ on faces.</h3>
@@ -379,7 +379,7 @@
           <source src="assets/site/asymmetric.webm" type="video/webm">
           <source src="assets/site/asymmetric.mp4" type="video/mp4">
         </video>
-        <figcaption class="cap">The first of those, with the tool against it. With the normal filter verifying counterparts, the ones it cannot confirm are dropped; <strong style="color:#b6c0c5">Robust Asymmetric Fallback</strong> writes them anyway. On this take, 378 weights to 671 &mdash; how much it reaches on yours is a property of the geometry, not of the add-on.</figcaption>
+        <figcaption class="cap">With the normal filter verifying counterparts, the ones it cannot confirm are dropped &mdash; 378 of the source&rsquo;s 678. <strong style="color:#b6c0c5">Robust Asymmetric Fallback</strong> writes them anyway: 671 of 678, 99% of parity. It is not an approximation &mdash; it undoes the filter&rsquo;s over-rejection on two-sided geometry, where the back of one card faces away from the front of its mirror.</figcaption>
       </figure>
     </div>
   </section>
