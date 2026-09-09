@@ -235,6 +235,28 @@
     </div>
   </section>
 
+  <section>
+    <div class="two">
+      <div class="stack">
+        <span class="eyebrow">The whole rig at once</span>
+        <h2>Rebuild every pair in one press.</h2>
+        <p class="lede">Mirror All L/R Groups pairs every group by name, creates the counterparts that are missing, mirrors each in the auto-detected direction, then runs a self-heal pass against the same metric the panel reports.</p>
+        <div class="figs">
+          <div><div class="n">L: 0</div><div class="k">37 UNPAIRED</div></div>
+          <div style="align-self:center;color:#3c464c">&rarr;</div>
+          <div><div class="n" style="color:#8ec5f0">L: 37</div><div class="k">COUNTERPARTS MATCHING</div></div>
+        </div>
+      </div>
+      <figure>
+        <video class="clip" poster="assets/site/batch-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Mirror All L/R Groups rebuilding 37 deleted vertex groups in one press">
+          <source src="assets/site/batch.webm" type="video/webm">
+          <source src="assets/site/batch.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">The entire left side of this rig is gone &mdash; 37 vertex groups deleted &mdash; and one press rebuilds every one of them from the side that still carries weight.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="watch">
     <div class="stack" style="gap:14px;margin-bottom:40px">
       <span class="eyebrow"><span class="ramp"></span>Recorded, not reconstructed</span>
@@ -243,11 +265,11 @@
     </div>
     <div class="clips">
       <figure>
-        <video class="clip" poster="assets/site/batch-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Mirror All L/R Groups rebuilding 37 deleted vertex groups in one press">
-          <source src="assets/site/batch.webm" type="video/webm">
-          <source src="assets/site/batch.mp4" type="video/mp4">
+        <video class="clip" poster="assets/site/layered_confine-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Confine to Mesh Island keeping an eyelid mirror on its own shell">
+          <source src="assets/site/layered_confine.webm" type="video/webm">
+          <source src="assets/site/layered_confine.mp4" type="video/mp4">
         </video>
-        <figcaption class="cap">The entire left side is gone &mdash; 37 groups deleted. One press of <strong style="color:#b6c0c5">Mirror All L/R Groups</strong> rebuilds every one.</figcaption>
+        <figcaption class="cap">Lash, eyeball and body are separate shells sitting on top of one another. Unconfined, a mirror of the upper eyelid reaches onto the layer behind it. <strong style="color:#b6c0c5">Confine to Mesh Island</strong> keeps it on the shell it started on.</figcaption>
       </figure>
       <figure>
         <video class="clip" poster="assets/site/interpolate-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Interpolate Symmetrical Weights filling a cheek the exact matcher cannot pair">
@@ -295,6 +317,24 @@
     </div>
   </section>
 
+  <section class="alt">
+    <div class="two">
+      <figure>
+        <video class="clip" poster="assets/site/single_RtoL-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Perfect Single Mirror rebuilding one half of a centre-line group from the other">
+          <source src="assets/site/single_RtoL.webm" type="video/webm">
+          <source src="assets/site/single_RtoL.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">HEAD spans both eyelash strips, so there is no counterpart group to take from. Perfect Single Mirror rebuilds the stripped side from the side that still carries weight: 342 back to 684, exactly what was removed.</figcaption>
+      </figure>
+      <div class="stack">
+        <span class="eyebrow">When there is nothing to copy from</span>
+        <h2>Some groups have no counterpart.</h2>
+        <p class="lede">A centre-line group &mdash; a head, a spine, an eyelash strip &mdash; spans both sides at once, so there is no Arm.L to take from. The fix is to mirror the group onto <em>itself</em>.</p>
+        <p class="muted">Perfect Single Mirror does that in one press, in whichever direction you choose, and reports the same way every other operation does.</p>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="stack" style="gap:12px;margin-bottom:36px">
       <h2>What it cannot do.</h2>
@@ -313,6 +353,15 @@
         <h3>Hair, lashes and brows take minutes.</h3>
         <p>Thousands of small overlapping pieces, and the matching work is genuinely large. Blender will look frozen &mdash; it is working. SymmetryFlow warns you before it starts, so you can save first or cancel.</p>
       </div>
+    </div>
+    <div style="max-width:900px;margin:38px auto 0">
+      <figure>
+        <video class="clip" poster="assets/site/asymmetric-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Robust Asymmetric Fallback recovering counterparts a strict check refuses">
+          <source src="assets/site/asymmetric.webm" type="video/webm">
+          <source src="assets/site/asymmetric.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">The first of those, with the tool against it. With the normal filter verifying counterparts, the ones it cannot confirm are dropped; <strong style="color:#b6c0c5">Robust Asymmetric Fallback</strong> writes them anyway. On this take, 378 weights to 671 &mdash; how much it reaches on yours is a property of the geometry, not of the add-on.</figcaption>
+      </figure>
     </div>
   </section>
 
