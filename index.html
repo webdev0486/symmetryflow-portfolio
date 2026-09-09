@@ -162,11 +162,11 @@
         <div class="specs"><span>Blender 3.6 &ndash; 5.1+</span><span>GPL-2.0-or-later</span><span>Readable Python</span></div>
       </div>
       <figure>
-        <video class="clip" poster="assets/site/restrict_lash-poster.jpg" muted loop playsinline width="1120" height="560" autoplay preload="metadata" aria-label="Mirroring an eyelash strip with Restrict to Counterpart Vertices on">
-          <source src="assets/site/restrict_lash.webm" type="video/webm">
-          <source src="assets/site/restrict_lash.mp4" type="video/mp4">
+        <video class="clip" poster="assets/site/foot-poster.jpg" muted loop playsinline autoplay preload="metadata" width="1120" height="560" aria-label="A foot vertex group repaired by Mirror Active Group">
+          <source src="assets/site/foot.webm" type="video/webm">
+          <source src="assets/site/foot.mp4" type="video/mp4">
         </video>
-        <figcaption class="cap">Restrict to Counterpart Vertices, on an eyelash strip &mdash; 42 of 213 writes refused, and the white dots afterwards are the 396 vertices the mirror was allowed to touch.</figcaption>
+        <figcaption class="cap">R_FOOT to L_FOOT &mdash; a band stripped out of the left foot, then rebuilt. 852 in, 851 back, every counterpart matching.</figcaption>
       </figure>
     </div>
   </section>
@@ -291,6 +291,25 @@
           <source src="assets/site/invert.mp4" type="video/mp4">
         </video>
         <figcaption class="cap"><strong style="color:#b6c0c5">Invert Transferred Weights</strong> writes every mirrored value as 1 &minus; w. The count cannot move, so the change is entirely in the colour: 433 of 438 hold a different value.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="two">
+      <div class="stack">
+        <span class="eyebrow">Writing only where it can prove a counterpart</span>
+        <h2>Fewer weights, on purpose.</h2>
+        <p class="lede">Restrict to Counterpart Vertices masks the mirror to the source&rsquo;s weighted vertices and their true counterparts, and refuses to write anywhere else. On this eyelash strip it turned away 42 of 213 writes.</p>
+        <p class="muted">So the mirrored side ends up with fewer weighted vertices than the source, and that is the option working rather than falling short. It is for the places where a spatial match would otherwise grab a vertex on the surface behind &mdash; a lash in front of an eyelid, an upper lip against a lower one.</p>
+        <p class="muted">The mask stays armed afterwards: the white dots are the 396 vertices the mirror was allowed to touch, left selected and ready to paint.</p>
+      </div>
+      <figure>
+        <video class="clip" poster="assets/site/restrict_lash-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Restrict to Counterpart Vertices masking an eyelash mirror">
+          <source src="assets/site/restrict_lash.webm" type="video/webm">
+          <source src="assets/site/restrict_lash.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">42 of 213 writes refused &mdash; and the white dots are what it was allowed to touch.</figcaption>
       </figure>
     </div>
   </section>
