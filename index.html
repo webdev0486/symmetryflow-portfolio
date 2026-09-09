@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0d1012">
 <meta property="og:title" content="SymmetryFlow — weight mirroring for Blender">
 <meta property="og:description" content="Mirror weights on the meshes that break X-Mirror — and know whether the mirror landed.">
-<meta property="og:image" content="assets/site/hero-1000.jpg">
+<meta property="og:image" content="assets/site/restrict_lash-poster.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/site/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -147,11 +147,11 @@
         <div class="specs"><span>Blender 3.6 &ndash; 5.1+</span><span>GPL-2.0-or-later</span><span>Readable Python</span></div>
       </div>
       <figure>
-        <picture>
-          <source type="image/webp" srcset="assets/site/hero-640.webp 640w, assets/site/hero-1000.webp 1000w, assets/site/hero-1600.webp 1600w" sizes="(max-width:900px) 92vw, 44vw">
-          <img class="shot" src="assets/site/hero-1000.jpg" srcset="assets/site/hero-640.jpg 640w, assets/site/hero-1000.jpg 1000w, assets/site/hero-1600.jpg 1600w" sizes="(max-width:900px) 92vw, 44vw" width="1600" height="800" alt="A character head in weight-paint colour, symmetric across the mirror plane" fetchpriority="high">
-        </picture>
-        <figcaption class="cap">HEAD across the whole head &mdash; provably symmetric, read back off the mesh.</figcaption>
+        <video class="clip" poster="assets/site/restrict_lash-poster.jpg" muted loop playsinline width="1120" height="560" autoplay preload="metadata" aria-label="Mirroring an eyelash strip with Restrict to Counterpart Vertices on">
+          <source src="assets/site/restrict_lash.webm" type="video/webm">
+          <source src="assets/site/restrict_lash.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">Restrict to Counterpart Vertices, on an eyelash strip &mdash; 42 of 213 writes refused, and the white dots afterwards are the 396 vertices the mirror was allowed to touch.</figcaption>
       </figure>
     </div>
   </section>
@@ -164,16 +164,13 @@
         <p class="lede">It is coordinate-based and all-or-nothing. On a production character that means the eyelids, lips, ears, teeth, brows and lashes &mdash; every part you actually need to get right.</p>
         <p class="muted">This is not a bug in any Blender version. It has always worked this way. It is simply not built for meshes that have stopped being tidy.</p>
       </div>
-      <div class="pair">
-        <figure>
-          <img class="shot" style="border-color:#3a2622" src="assets/site/eyelid-before-640.jpg" srcset="assets/site/eyelid-before-640.jpg 640w, assets/site/eyelid-before-1000.jpg 1000w" sizes="(max-width:900px) 46vw, 22vw" width="1000" height="500" alt="An eyelid vertex group with the right side emptied of weights" loading="lazy">
-          <figcaption class="cap" style="color:#d97757">BEFORE &middot; one side weighted</figcaption>
-        </figure>
-        <figure>
-          <img class="shot" style="border-color:#22333c" src="assets/site/eyelid-after-640.jpg" srcset="assets/site/eyelid-after-640.jpg 640w, assets/site/eyelid-after-1000.jpg 1000w" sizes="(max-width:900px) 46vw, 22vw" width="1000" height="500" alt="The same eyelid pair after one press of Mirror Active Group" loading="lazy">
-          <figcaption class="cap" style="color:#8ec5f0">AFTER &middot; one press, 221 weights</figcaption>
-        </figure>
-      </div>
+      <figure>
+        <video class="clip" poster="assets/site/face_problem-poster.jpg" muted loop playsinline width="1120" height="560" controls preload="none" aria-label="The balance panel naming a mismatched eyelid pair, then repairing it">
+          <source src="assets/site/face_problem.webm" type="video/webm">
+          <source src="assets/site/face_problem.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">A face that looks fine and reads wrong. The panel names the pair &mdash; the lower eyelids &mdash; and one press of Mirror Active Group repairs it.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -204,11 +201,11 @@
   <section class="alt">
     <div class="two">
       <figure>
-        <picture>
-          <source type="image/webp" srcset="assets/site/panel-640.webp 640w, assets/site/panel-1000.webp 1000w, assets/site/panel-1600.webp 1600w" sizes="(max-width:900px) 92vw, 44vw">
-          <img class="shot" src="assets/site/panel-1000.jpg" srcset="assets/site/panel-640.jpg 640w, assets/site/panel-1000.jpg 1000w, assets/site/panel-1600.jpg 1600w" sizes="(max-width:900px) 92vw, 44vw" width="1600" height="800" alt="The L/R Balance panel listing mismatched vertex-group pairs with per-pair weight counts and Quick Fix buttons" loading="lazy">
-        </picture>
-        <figcaption class="cap">L/R Balance, mid-backlog &mdash; five mismatched pairs, each with a Quick Fix.</figcaption>
+        <video class="clip" poster="assets/site/quickfix-poster.jpg" muted loop playsinline width="1120" height="560" controls preload="none" aria-label="Select Mirror Group showing each side, then Mirror Active Group repairing the damage">
+          <source src="assets/site/quickfix.webm" type="video/webm">
+          <source src="assets/site/quickfix.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">Select Mirror Group shows the intact side, then the damaged one &mdash; Blender draws one group at a time. Mirror Active Group rebuilds it: 179 weights back to 340.</figcaption>
       </figure>
       <div class="stack">
         <span class="eyebrow">Knowing whether it worked</span>
@@ -226,37 +223,37 @@
   <section id="watch">
     <div class="stack" style="gap:14px;margin-bottom:40px">
       <span class="eyebrow"><span class="ramp"></span>Recorded, not reconstructed</span>
-      <h2>Four operations, driven by real mouse input.</h2>
-      <p class="muted" style="max-width:66ch">Every clip below was recorded against a live Blender session with the pointer pressing the actual buttons &mdash; nothing scripted the result into place. Playback is time-compressed only where nothing but the cursor was moving.</p>
+      <h2>Four options, and what each one changes.</h2>
+      <p class="muted" style="max-width:66ch">Each clip mirrors the same group twice &mdash; once with the box unticked, once with it ticked &mdash; so what you are looking at is the difference the option makes. All of it recorded against a live Blender session with the pointer pressing the actual buttons; nothing scripted the result into place.</p>
     </div>
     <div class="clips">
       <figure>
-        <video poster="assets/site/batch-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Mirror All L/R Groups rebuilding 37 deleted vertex groups in one press">
+        <video class="clip" poster="assets/site/batch-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Mirror All L/R Groups rebuilding 37 deleted vertex groups in one press">
           <source src="assets/site/batch.webm" type="video/webm">
           <source src="assets/site/batch.mp4" type="video/mp4">
         </video>
         <figcaption class="cap">The entire left side is gone &mdash; 37 groups deleted. One press of <strong style="color:#b6c0c5">Mirror All L/R Groups</strong> rebuilds every one.</figcaption>
       </figure>
       <figure>
-        <video poster="assets/site/quickfix-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="A damaged calf vertex group repaired by Mirror Active Group">
-          <source src="assets/site/quickfix.webm" type="video/webm">
-          <source src="assets/site/quickfix.mp4" type="video/mp4">
+        <video class="clip" poster="assets/site/interpolate-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Interpolate Symmetrical Weights filling a cheek the exact matcher cannot pair">
+          <source src="assets/site/interpolate.webm" type="video/webm">
+          <source src="assets/site/interpolate.mp4" type="video/mp4">
         </video>
-        <figcaption class="cap">One calf with a band stripped out of its middle. <strong style="color:#b6c0c5">Mirror Active Group</strong> rebuilds it: 179 weights back to 340.</figcaption>
+        <figcaption class="cap">Halves not built vertex-for-vertex. Exact matching leaves gaps; <strong style="color:#b6c0c5">Interpolate Symmetrical Weights</strong> takes this cheek from 94 weights to 296.</figcaption>
       </figure>
       <figure>
-        <video poster="assets/site/posed-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Weights mirrored correctly on an armature that is out of rest pose">
-          <source src="assets/site/posed.webm" type="video/webm">
-          <source src="assets/site/posed.mp4" type="video/mp4">
+        <video class="clip" poster="assets/site/clean-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Clean Unmatched Weights removing a band the source side cannot account for">
+          <source src="assets/site/clean.webm" type="video/webm">
+          <source src="assets/site/clean.mp4" type="video/mp4">
         </video>
-        <figcaption class="cap">Out of rest pose, where a coordinate mirror cannot pair the sides at all: 296 weights back to 438.</figcaption>
+        <figcaption class="cap">A band of weight the source side cannot account for. Ticked, <strong style="color:#b6c0c5">Clean Unmatched Weights</strong> removes it: 463 down to 340, all 123 strays dropped.</figcaption>
       </figure>
       <figure>
-        <video poster="assets/site/face_problem-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="The balance panel naming a mismatched eyelid pair, then repairing it">
-          <source src="assets/site/face_problem.webm" type="video/webm">
-          <source src="assets/site/face_problem.mp4" type="video/mp4">
+        <video class="clip" poster="assets/site/invert-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Invert Transferred Weights writing every mirrored value as one minus w">
+          <source src="assets/site/invert.webm" type="video/webm">
+          <source src="assets/site/invert.mp4" type="video/mp4">
         </video>
-        <figcaption class="cap">A face that looks fine and reads wrong. The panel names the pair &mdash; the lower eyelids &mdash; and one press repairs it.</figcaption>
+        <figcaption class="cap"><strong style="color:#b6c0c5">Invert Transferred Weights</strong> writes every mirrored value as 1 &minus; w. The count cannot move, so the change is entirely in the colour: 433 of 438 hold a different value.</figcaption>
       </figure>
     </div>
   </section>
@@ -274,8 +271,11 @@
         </div>
       </div>
       <figure>
-        <img class="shot" src="assets/site/posed-1000.jpg" srcset="assets/site/posed-640.jpg 640w, assets/site/posed-1000.jpg 1000w, assets/site/posed-1600.jpg 1600w" sizes="(max-width:900px) 92vw, 44vw" width="1600" height="800" alt="A posed rig with both arms in frame and weights mirrored correctly across them" loading="lazy">
-        <figcaption class="cap">Shoulder raised 45&deg; &mdash; the sides are genuinely not at mirrored coordinates.</figcaption>
+        <video class="clip" poster="assets/site/posed-poster.jpg" muted loop playsinline width="1120" height="560" controls preload="none" aria-label="Weights mirrored correctly on an armature that is out of rest pose">
+          <source src="assets/site/posed.webm" type="video/webm">
+          <source src="assets/site/posed.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">Shoulder raised 45&deg; &mdash; the sides are genuinely not at mirrored coordinates, and the mirror still lands.</figcaption>
       </figure>
     </div>
   </section>
@@ -337,5 +337,17 @@
 </footer>
 
 </div>
+
+<script>
+  // The hero clip autoplays. Anyone who has asked their system for less motion
+  // gets it paused with controls instead, rather than a face moving at them.
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video[autoplay]").forEach(function (v) {
+      v.removeAttribute("autoplay");
+      v.setAttribute("controls", "");
+      v.pause();
+    });
+  }
+</script>
 </body>
 </html>
