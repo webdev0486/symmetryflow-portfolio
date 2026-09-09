@@ -31,20 +31,47 @@ bug in Blender itself: any add-on that highlights vertices and then leaves Weigh
 Paint mode closes Blender instantly. It was reproduced with SymmetryFlow
 completely uninstalled, and Blender fixed it in 5.1.
 
-Highlights covered on the page:
+## What the page covers
 
-- **Pair / Single mirror modes** — transfer weights between counterpart groups, or symmetrize a center-line group internally
-- **Auto-Detect Direction & Tolerance** — scans weight density and scales the KD-Tree search radius to mesh size automatically
-- **UV Space Mirroring** — mirrors via 2D UV layout for posed or asymmetrical meshes, with nearest-neighbor fallback for unmatched vertices
-- **Normal Alignment Check** — prevents weight bleed-through on double-sided geometry (lips, eyelids)
-- **Auto-Clean Micro-Noise** — strips ghost weights below a configurable threshold
-- **Enforce Armature Rest Pose** — mirror weights mid-animation without manually clearing the pose
-- **Symmetry Health Diagnostics** — reports exact vertex mismatch counts before you commit to a fix
-- **Quick Fix Solver** — one-click topological resolution for mismatched vertex groups
+In order, because the page argues rather than lists:
 
-Every figure quoted on the page — 221 weights, 296 → 438, 52/52, the 44% ceiling
-on Robust Asymmetric Fallback — was read back off the mesh by the recording
-harness at the moment the take was made, and matches the product listing.
+1. **The problem** — Blender's mirror is coordinate-based and all-or-nothing, so
+   it stops at the first vertex that is not an exact spatial twin. On a
+   character that is the eyelids, lips, ears, teeth, brows and lashes. Shown as
+   a before/after pair on one eyelid group.
+2. **Two matching engines, chosen automatically** — topological (walks edge
+   connectivity, so it survives posed meshes and shape keys) and spatial KD-tree
+   (O(log N), for islands and shell-split geometry), with Auto-Detect picking
+   per group.
+3. **The verification layer** — the L/R Balance panel reporting each pair as
+   Balanced, Mismatched or Distorted. The verdict comes from the same function
+   Quick Fix acts on, so report and repair cannot contradict each other. This is
+   the part no competitor screenshot has, and the page says so.
+4. **Four demos**, as video: Mirror All L/R Groups rebuilding 37 deleted groups,
+   Mirror Active Group repairing a damaged calf, a mirror landing on a rig that
+   is out of rest pose, and the panel naming a mismatched eyelid pair.
+5. **The posed-rig case** on its own, because a coordinate mirror cannot do it
+   at all: 296 weights back to 438.
+6. **What it cannot do** — three limitations stated plainly rather than buried:
+   it cannot make an asymmetric mesh symmetrical (Robust Asymmetric Fallback
+   recovers at most a measured 44%), vertex counts may differ on faces, and hair
+   cards take minutes to analyse.
+7. **Compatibility** — the two downloads, and the Blender 5.0.0/5.0.1 warning.
+
+Features the add-on has but the page does not argue — UV-space mirroring,
+Auto-Clean Micro-Noise, rest-pose enforcement, custom naming patterns — are in
+the product listing and the shipped manual. The page is deliberately shorter
+than the feature list.
+
+Every figure quoted on it — 221 weights, 296 → 438, 52/52, the 44% ceiling on
+Robust Asymmetric Fallback — was read back off the mesh by the recording harness
+at the moment the take was made, and matches the product listing.
+
+## Status
+
+Not on sale yet. The three calls to action read "Coming soon on Superhive" and
+link to the marketplace rather than to a product page that does not exist; when
+the listing goes up they become the listing URL.
 
 ## Deployment
 
