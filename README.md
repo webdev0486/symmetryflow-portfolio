@@ -75,9 +75,27 @@ option does rather than quoting a share measured on our own fixtures.
 
 ## Status
 
-Not on sale yet. The three calls to action read "Coming soon on Superhive" and
-link to the marketplace rather than to a product page that does not exist; when
-the listing goes up they become the listing URL.
+Not on sale yet. **Two** calls to action — one in the hero, one in the closing
+section — read "Coming soon on Superhive" and link to
+`https://superhivemarket.com/`, which is checked and resolves to Superhive
+(formerly Blender Market). They deliberately do not point at a
+`/products/` path, because that slug is not confirmed until the listing exists
+and a wrong one is a 404 on a live site.
+
+**To publish**, in `index.html`:
+
+```
+find     href="https://superhivemarket.com/"
+replace  href="https://superhivemarket.com/products/<your-slug>"
+```
+
+and change the two "Coming soon on Superhive" labels to whatever the button
+should say — searching for `soon` finds every one. A comment at the top of
+`index.html` repeats this, so it is findable from the file itself.
+
+Worth doing at the same time: the same assumed slug is baked into `README.txt`,
+`CHANGELOG.txt` and `__init__.py` inside the add-on zip, where fixing it costs
+a rebuild rather than an edit.
 
 ## Deployment
 
