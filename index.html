@@ -227,9 +227,17 @@
         <h2>Most tools mirror. This one tells you whether the mirror landed.</h2>
         <p class="lede">If a region genuinely cannot be mirrored &mdash; because one side has no matching vertex at all &mdash; it says so, by name, instead of quietly doing something wrong.</p>
         <div class="rows">
-          <div><span class="name">L_UPPER_ARM</span><span class="bad">Mismatched &middot; 438</span></div>
-          <div><span class="name">mFaceEyeLidUpper</span><span class="bad">Mismatched &middot; 221</span></div>
-          <div><span class="name">mFaceLipUpper</span><span class="ok">Balanced &middot; 52 / 52</span></div>
+          <!-- REAL ROWS. These three are read off SymmetryFlow-Tests-low.blend with
+               the add-on's own shared metric - the same utils.counterpart_mismatch_count
+               the L/R Balance panel calls, with the same compare radius, recovery
+               radius and island confinement. The eyelash pairs are 179/179 and 71/71
+               weighted and disagree on 4 and 2 vertices; the arm pair is 438/438 and
+               agrees everywhere. The rows that were here before named groups that do
+               not exist in any fixture (the real names carry a side suffix) and quoted
+               counts no group has, which contradicted this page's own closing line. -->
+          <div><span class="name">mFaceEyeLidLowerLeft</span><span class="bad">Mismatched &middot; 4</span></div>
+          <div><span class="name">mFaceEyecornerInnerLeft</span><span class="bad">Mismatched &middot; 2</span></div>
+          <div><span class="name">L_UPPER_ARM</span><span class="ok">Balanced &middot; 438 / 438</span></div>
         </div>
       </div>
     </div>
@@ -260,7 +268,7 @@
   <section id="watch">
     <div class="stack" style="gap:14px;margin-bottom:40px">
       <span class="eyebrow"><span class="ramp"></span>Recorded, not reconstructed</span>
-      <h2>Four options, and what each one changes.</h2>
+      <h2>Four of the seventeen options, and what each one changes.</h2>
       <p class="muted" style="max-width:66ch">Each clip mirrors the same group twice &mdash; once with the box unticked, once with it ticked &mdash; so what you are looking at is the difference the option makes. All of it recorded against a live Blender session with the pointer pressing the actual buttons; nothing scripted the result into place.</p>
     </div>
     <div class="clips">
