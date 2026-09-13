@@ -370,65 +370,6 @@
   </section>
 
   <section>
-    <div class="stack" style="gap:12px;margin-bottom:36px">
-      <h2>What it cannot do.</h2>
-      <p class="muted" style="max-width:62ch">We would rather you know this before buying than after.</p>
-    </div>
-    <div class="three">
-      <div class="limit">
-        <h3>It cannot make an asymmetric mesh symmetrical.</h3>
-        <p>Where one side has no matching vertex, no tool can place a weight exactly. SymmetryFlow names those groups instead of guessing. Robust Asymmetric Fallback closes most of the rest: on the add-on&rsquo;s own asymmetric fixture it takes the mirrored side from 56% of the source&rsquo;s weighted vertices to 99%. The last seven vertices of 678 it does not reach.</p>
-      </div>
-      <div class="limit">
-        <h3>Vertex counts may differ on faces.</h3>
-        <p>Character faces are often not vertex-aligned across the mirror plane, so a rebuilt side can hold the same weights on a few more vertices. The weights are right; the tally differs.</p>
-      </div>
-      <div class="limit">
-        <h3>Hair, lashes and brows take minutes.</h3>
-        <p>Thousands of small overlapping pieces, and the matching work is genuinely large. Blender will look frozen &mdash; it is working. SymmetryFlow warns you before it starts, so you can save first or cancel.</p>
-      </div>
-    </div>
-    <div style="max-width:900px;margin:38px auto 0">
-      <figure>
-        <video class="clip" poster="assets/site/asymmetric-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Robust Asymmetric Fallback recovering counterparts a strict check refuses">
-          <source src="assets/site/asymmetric.webm" type="video/webm">
-          <source src="assets/site/asymmetric.mp4" type="video/mp4">
-        </video>
-        <figcaption class="cap">With the normal filter verifying counterparts, the ones it cannot confirm are dropped &mdash; 378 of the source&rsquo;s 678. <strong style="color:#b6c0c5">Robust Asymmetric Fallback</strong> writes them anyway: 671 of 678, 99% of parity. It is not an approximation &mdash; it undoes the filter&rsquo;s over-rejection on two-sided geometry, where the back of one card faces away from the front of its mirror.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="compat" class="alt">
-    <div class="two top">
-      <div class="stack">
-        <h2>Two downloads. Take one.</h2>
-        <p class="lede">Same add-on, same features. They differ only in packaging, because Blender changed its add-on system in 4.2. Don&rsquo;t unzip either &mdash; Blender installs from the zip.</p>
-        <div style="padding:18px 20px;border:1px solid #3a2622;border-radius:4px;background:#17110f">
-          <div class="cap" style="color:#d97757;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">Not Blender 5.0.0 or 5.0.1</div>
-          <p style="font-size:14px;color:#b6a49c">Those two releases contain a bug in Blender itself &mdash; any add-on that highlights vertices then leaves Weight Paint mode closes Blender instantly, losing unsaved work. We reproduced it with SymmetryFlow completely uninstalled. Blender fixed it in 5.1.</p>
-        </div>
-      </div>
-      <div class="rows">
-        <div><span style="color:#b6c0c5">4.2, 4.3, 4.4, 4.5, 5.1+</span><span style="color:#8ec5f0">(Blender 4.2+).zip</span></div>
-        <div><span style="color:#b6c0c5">3.6, 4.0, 4.1</span><span style="color:#8ec5f0">(Blender 3.6&ndash;4.1).zip</span></div>
-        <div><span style="color:#6c777d;font-size:11.5px">Edit &gt; Preferences &gt; Add-ons &gt; Install from Disk</span></div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="cta">
-    <span class="bar"></span>
-    <h2 style="font-weight:900;font-size:clamp(28px,4.4vw,44px);max-width:20ch">Stop guessing whether the mirror worked.</h2>
-    <p class="muted" style="max-width:52ch">Source included, with a full manual, a known-issues document written plainly and with measurements, and the complete changelog.</p>
-    <div class="cta-actions">
-      <a class="btn soon" href="https://superhivemarket.com/"><span class="dot"></span>Coming soon on Superhive</a>
-    </div>
-    <span class="cap">GPL-2.0-or-later &middot; source included &middot; <a href="mailto:dev.luv@outlook.com">dev.luv@outlook.com</a></span>
-  </section>
-
-  <section>
     <div class="stack" style="gap:14px;margin-bottom:34px">
       <span class="eyebrow"><span class="ramp"></span>The rest of the panel</span>
       <h2>Every other option, and when you would reach for it.</h2>
@@ -510,6 +451,66 @@
 
     </div>
   </section>
+
+  <section>
+    <div class="stack" style="gap:12px;margin-bottom:36px">
+      <h2>What it cannot do.</h2>
+      <p class="muted" style="max-width:62ch">We would rather you know this before buying than after.</p>
+    </div>
+    <div class="three">
+      <div class="limit">
+        <h3>It cannot make an asymmetric mesh symmetrical.</h3>
+        <p>Where one side has no matching vertex, no tool can place a weight exactly. SymmetryFlow names those groups instead of guessing. Robust Asymmetric Fallback closes most of the rest: on the add-on&rsquo;s own asymmetric fixture it takes the mirrored side from 56% of the source&rsquo;s weighted vertices to 99%. The last seven vertices of 678 it does not reach.</p>
+      </div>
+      <div class="limit">
+        <h3>Vertex counts may differ on faces.</h3>
+        <p>Character faces are often not vertex-aligned across the mirror plane, so a rebuilt side can hold the same weights on a few more vertices. The weights are right; the tally differs.</p>
+      </div>
+      <div class="limit">
+        <h3>Hair, lashes and brows take minutes.</h3>
+        <p>Thousands of small overlapping pieces, and the matching work is genuinely large. Blender will look frozen &mdash; it is working. SymmetryFlow warns you before it starts, so you can save first or cancel.</p>
+      </div>
+    </div>
+    <div style="max-width:900px;margin:38px auto 0">
+      <figure>
+        <video class="clip" poster="assets/site/asymmetric-poster.jpg" muted loop playsinline controls preload="none" width="1120" height="560" aria-label="Robust Asymmetric Fallback recovering counterparts a strict check refuses">
+          <source src="assets/site/asymmetric.webm" type="video/webm">
+          <source src="assets/site/asymmetric.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">With the normal filter verifying counterparts, the ones it cannot confirm are dropped &mdash; 378 of the source&rsquo;s 678. <strong style="color:#b6c0c5">Robust Asymmetric Fallback</strong> writes them anyway: 671 of 678, 99% of parity. It is not an approximation &mdash; it undoes the filter&rsquo;s over-rejection on two-sided geometry, where the back of one card faces away from the front of its mirror.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="compat" class="alt">
+    <div class="two top">
+      <div class="stack">
+        <h2>Two downloads. Take one.</h2>
+        <p class="lede">Same add-on, same features. They differ only in packaging, because Blender changed its add-on system in 4.2. Don&rsquo;t unzip either &mdash; Blender installs from the zip.</p>
+        <div style="padding:18px 20px;border:1px solid #3a2622;border-radius:4px;background:#17110f">
+          <div class="cap" style="color:#d97757;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">Not Blender 5.0.0 or 5.0.1</div>
+          <p style="font-size:14px;color:#b6a49c">Those two releases contain a bug in Blender itself &mdash; any add-on that highlights vertices then leaves Weight Paint mode closes Blender instantly, losing unsaved work. We reproduced it with SymmetryFlow completely uninstalled. Blender fixed it in 5.1.</p>
+        </div>
+      </div>
+      <div class="rows">
+        <div><span style="color:#b6c0c5">4.2, 4.3, 4.4, 4.5, 5.1+</span><span style="color:#8ec5f0">(Blender 4.2+).zip</span></div>
+        <div><span style="color:#b6c0c5">3.6, 4.0, 4.1</span><span style="color:#8ec5f0">(Blender 3.6&ndash;4.1).zip</span></div>
+        <div><span style="color:#6c777d;font-size:11.5px">Edit &gt; Preferences &gt; Add-ons &gt; Install from Disk</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cta">
+    <span class="bar"></span>
+    <h2 style="font-weight:900;font-size:clamp(28px,4.4vw,44px);max-width:20ch">Stop guessing whether the mirror worked.</h2>
+    <p class="muted" style="max-width:52ch">Source included, with a full manual, a known-issues document written plainly and with measurements, and the complete changelog.</p>
+    <div class="cta-actions">
+      <a class="btn soon" href="https://superhivemarket.com/"><span class="dot"></span>Coming soon on Superhive</a>
+    </div>
+    <span class="cap">GPL-2.0-or-later &middot; source included &middot; <a href="mailto:dev.luv@outlook.com">dev.luv@outlook.com</a></span>
+  </section>
+
 
 </main>
 
