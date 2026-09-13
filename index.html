@@ -468,11 +468,11 @@
         <p class="cap">On by default, and the reason the Topological Mirror toggle is greyed out until you untick it. Untick only when you want to force one engine and watch what it does.</p>
       </div>
 
-      <div class="card">
-        <span class="eyebrow">Auto-Detect Direction</span>
-        <p>Reads where the weight actually is before deciding which side is the source, rather than trusting the direction dropdown.</p>
-        <p class="cap">Saves you mirroring an empty side onto a full one. Worth leaving on; the panel still shows you the direction it settled on.</p>
-      </div>
+      <!-- NO "AUTO-DETECT DIRECTION" CARD. It is not a checkbox any more: the
+           property survives in properties.py and is still read by the algorithm,
+           but nothing in the add-on draws it, so a buyer cannot switch it on and
+           listing it would promise a control that is not there. Group to
+           Counterpart works out the source side from the weights themselves. -->
 
       <div class="card">
         <span class="eyebrow">Auto-Detect Counterparts</span>
