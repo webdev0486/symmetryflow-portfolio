@@ -226,6 +226,7 @@
         <span class="eyebrow">Knowing whether it worked</span>
         <h2>Most tools mirror. This one tells you whether the mirror landed.</h2>
         <p class="lede">If a region genuinely cannot be mirrored &mdash; because one side has no matching vertex at all &mdash; it says so, by name, instead of quietly doing something wrong.</p>
+        <p class="muted">Every pair it calls Mismatched carries a <strong style="color:#b6c0c5">Quick Fix</strong> button that repairs exactly what the readout is complaining about, and leaves Balanced pairs alone. The verdict and the repair come from the same function, so the panel cannot report a problem the button does not understand.</p>
         <div class="rows">
           <!-- REAL ROWS. These three are read off SymmetryFlow-Tests-low.blend with
                the add-on's own shared metric - the same utils.counterpart_mismatch_count
@@ -366,6 +367,72 @@
         <p class="lede">A centre-line group &mdash; a head, a spine, an eyelash strip &mdash; spans both sides at once, so there is no Arm.L to take from. The fix is to mirror the group onto <em>itself</em>.</p>
         <p class="muted">Perfect Single Mirror does that in one press, in whichever direction you choose, and reports the same way every other operation does.</p>
       </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="stack" style="gap:14px;margin-bottom:34px">
+      <span class="eyebrow"><span class="ramp"></span>Beyond the mirror button</span>
+      <h2>The tools around the mirror.</h2>
+      <p class="muted" style="max-width:70ch">Mirroring is one button. Most of a rigging afternoon is the work either side of it &mdash; finding which pair is wrong, creating the group that does not exist yet, clearing a side to start again. These sit in the same sidebar.</p>
+    </div>
+    <div class="three">
+
+      <div class="card">
+        <span class="eyebrow">Finding the problem</span>
+        <p><strong style="color:#b6c0c5">Select Mismatched Vertices</strong> selects every vertex in a pair that disagrees with its counterpart, so you can see the damage rather than read a number. <strong style="color:#b6c0c5">Select Unpairable Vertices</strong> selects the ones with no unique partner at all &mdash; near-coincident clusters and one-sided detail, which is the structural reason a count gap exists.</p>
+        <p class="cap">Between them they answer the two different questions a gap can raise: is this wrong, or is this simply not mirrorable.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Getting to the other side</span>
+        <p><strong style="color:#b6c0c5">Select Mirror Group</strong> switches the active group to its counterpart, which is how you compare two sides when Blender will only draw one at a time. <strong style="color:#b6c0c5">Create Missing Groups</strong> scans the rig and makes every counterpart that does not exist yet.</p>
+        <p class="cap">Create Missing is the one that turns a half-rigged character into something Mirror All can work on.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Starting over</span>
+        <p><strong style="color:#b6c0c5">Clear Active Group Weights</strong> empties one group. <strong style="color:#b6c0c5">Delete All L Groups</strong> and its Right counterpart remove one whole side.</p>
+        <p class="cap">Blunt by design, and the fastest way to test that a mirror really does rebuild what you think it does &mdash; which is exactly how the batch clip further up was made.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Run Diagnostics</span>
+        <p>A geometric symmetry analysis of the mesh rather than of one group: what is symmetrical, what is not, and a health readout for the rig as a whole. It also raises a Normal Inversion alert when the mesh has flipped normals, which is worth knowing before you blame the mirror.</p>
+        <p class="cap">Run it once on a character you have been handed, before you mirror anything.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Tolerance, worked out for you</span>
+        <p><strong style="color:#b6c0c5">Auto-Adjust Tolerance</strong> calculates and applies the right matching tolerance for the active group. <strong style="color:#b6c0c5">Optimize All Tolerances</strong> walks every group, runs the local diagnostic on each, and settles on one figure that suits the whole character.</p>
+        <p class="cap">For when a pair reads Mismatched and the cause is the search radius rather than the geometry.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Align Pivot to Center</span>
+        <p>Snaps the object&rsquo;s origin to the centre of its bounding box.</p>
+        <p class="cap">A coordinate mirror is only as good as the plane it reflects across. If the origin has drifted, this puts it back, and Mirror in World Space handles the cases where it cannot be moved.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">All three axes</span>
+        <p>X, Y and Z. Left to right is the common case, but front to back and top to bottom are both supported, on the topological engine as well as the spatial one.</p>
+        <p class="cap">For props, machinery and anything whose symmetry does not run the way a character&rsquo;s does.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Export Console Log</span>
+        <p>Writes the add-on&rsquo;s diagnostic log stream out as a text file.</p>
+        <p class="cap">If something goes wrong on a mesh nobody else has, this is what turns a support conversation into a fixable report.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Two modes, one panel</span>
+        <p><strong style="color:#b6c0c5">Group to Counterpart</strong> mirrors a group onto its opposite number. <strong style="color:#b6c0c5">Symmetrize Single Group</strong> mirrors a centre-line group onto itself, for a head, a spine or an eyelash strip that spans both sides at once.</p>
+        <p class="cap">The second is the case with no counterpart to copy from, shown further up.</p>
+      </div>
+
     </div>
   </section>
 
