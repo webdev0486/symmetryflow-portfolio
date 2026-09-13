@@ -311,89 +311,6 @@
   </section>
 
   <section>
-    <div class="stack" style="gap:14px;margin-bottom:34px">
-      <span class="eyebrow"><span class="ramp"></span>The rest of the panel</span>
-      <h2>Every other option, and when you would reach for it.</h2>
-      <p class="muted" style="max-width:70ch">These have no clip, and that is deliberate. An option demo is only worth watching when the difference is visible, and for most of these it is not &mdash; the work happens on hidden surfaces, in a tolerance, or across a batch. Where a figure is quoted below it was measured on a test character, not estimated.</p>
-    </div>
-    <div class="three">
-
-      <div class="card">
-        <span class="eyebrow">Verify Normal Alignment</span>
-        <p>Rejects a candidate whose surface faces the opposite way to the source, by comparing its normal against the source&rsquo;s mirrored normal. Heavier weights get more latitude, so a strong weight is never dropped over a noisy normal.</p>
-        <p class="cap">Use it when surfaces sit back to back: inner against outer lip, eyelid against the lash in front of it, the mouth bag. On the lip corner of the test character it cut wrong-facing writes from 8 of 92 to 2. It has no effect at all while Robust Asymmetric Fallback is on &mdash; that option&rsquo;s promise that nothing disappears overrides these refusals.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Auto-Calculate Tolerance</span>
-        <p>Scales the match radius to the mesh&rsquo;s own edge length instead of a fixed number, so the same setting means the same thing on a low-poly body and a dense face.</p>
-        <p class="cap">Leave it on unless you are chasing a specific failure by hand. Turning it off reveals Precision Tolerance, which is then yours to set and yours to get wrong.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Topological Mirror</span>
-        <p>Walks the mesh&rsquo;s own edge connectivity rather than matching positions in space. The engine behind the posed-rig clip further up.</p>
-        <p class="cap">For posed meshes and shape keys, where the two sides are nowhere near mirrored coordinates. It needs the base topology to be genuinely symmetrical; where it is not, the spatial engine is the one that works.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Auto-Detect Symmetry Mode</span>
-        <p>Tests each group and picks the topological or the spatial engine for it, instead of you choosing once for the whole character.</p>
-        <p class="cap">On by default, and the reason the Topological Mirror toggle is greyed out until you untick it. Untick only when you want to force one engine and watch what it does.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Auto-Detect Direction</span>
-        <p>Reads where the weight actually is before deciding which side is the source, rather than trusting the direction dropdown.</p>
-        <p class="cap">Saves you mirroring an empty side onto a full one. Worth leaving on; the panel still shows you the direction it settled on.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Auto-Detect Counterparts</span>
-        <p>Finds the partner group from the active group&rsquo;s name, covering .L/.R, _L/_R, -L/-R, Left/Right, Lft/Rgt and the matching prefixes.</p>
-        <p class="cap">Untick it to reveal Custom Match Pattern, for a naming convention the built-in table does not cover. A custom pattern is a plain text swap and takes precedence, so set it to your actual convention or leave this ticked.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Mirror in World Space</span>
-        <p>Transforms coordinates and normals into world space before reflecting them.</p>
-        <p class="cap">For objects that are not sitting at a clean origin &mdash; scaled, rotated, or moved off centre. On an object with an identity transform it changes nothing, which is why it has no clip: the test characters are all square to the world.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Use UV Space Mirroring</span>
-        <p>Matches vertices by their UV layout instead of their position in 3D, and derives its tolerance from UV edge length.</p>
-        <p class="cap">For halves that share a mirrored unwrap but do not line up in space. It is the wrong tool for a limb &mdash; measured on three characters it wrote fewer weights than the 3D matcher every time &mdash; and it does not bleed onto UV-less or seam vertices.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Auto-Resolve Mismatches</span>
-        <p>If the first pass leaves mismatches, it runs again with a widened adaptive tolerance rather than handing you the problem.</p>
-        <p class="cap">Useful on meshes where the two sides are close but not exact. It only does anything when the first attempt falls short, which is why it shows no difference on a clean character.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Cache Symmetry Mapping</span>
-        <p>Builds one shared symmetry map per Mirror All run and applies it to every group in the batch.</p>
-        <p class="cap">Leave it on. Off is not a speed-versus-accuracy trade: on a 14,164-vertex, 167-group rig whose weights were already symmetric, on took 1.8 seconds and changed nothing, while off took 119 seconds, rewrote 11 groups and lost 74 weighted vertices outright. It has no effect on a single-group mirror.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Auto-Clean Micro-Noise</span>
-        <p>Strips very small stray weights before the mirror runs.</p>
-        <p class="cap">For meshes carrying leftover dust from earlier edits. Do not pair it with Invert Transferred Weights: cleaning happens first, and a weight of 0.003 is meaningful once inverted, becoming roughly 0.997 on the target. The panel warns you when both are on.</p>
-      </div>
-
-      <div class="card">
-        <span class="eyebrow">Include Near-Zero Weights</span>
-        <p>Lowers the analysis cutoff from the Minimum Weight Threshold to a fixed 0.000001, so barely-weighted vertices still reach the matcher and the diagnostics.</p>
-        <p class="cap">Turn it on when the balance panel insists a pair is fine and you can see it is not. While it is on the Minimum Weight Threshold is ignored entirely, and the panel greys the field to say so.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
     <div class="two">
       <div class="stack">
         <span class="eyebrow">Writing only where it can prove a counterpart</span>
@@ -497,6 +414,89 @@
         <div><span style="color:#b6c0c5">3.6, 4.0, 4.1</span><span style="color:#8ec5f0">(Blender 3.6&ndash;4.1).zip</span></div>
         <div><span style="color:#6c777d;font-size:11.5px">Edit &gt; Preferences &gt; Add-ons &gt; Install from Disk</span></div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack" style="gap:14px;margin-bottom:34px">
+      <span class="eyebrow"><span class="ramp"></span>The rest of the panel</span>
+      <h2>Every other option, and when you would reach for it.</h2>
+      <p class="muted" style="max-width:70ch">These have no clip, and that is deliberate. An option demo is only worth watching when the difference is visible, and for most of these it is not &mdash; the work happens on hidden surfaces, in a tolerance, or across a batch. Where a figure is quoted below it was measured on a test character, not estimated.</p>
+    </div>
+    <div class="three">
+
+      <div class="card">
+        <span class="eyebrow">Verify Normal Alignment</span>
+        <p>Rejects a candidate whose surface faces the opposite way to the source, by comparing its normal against the source&rsquo;s mirrored normal. Heavier weights get more latitude, so a strong weight is never dropped over a noisy normal.</p>
+        <p class="cap">Use it when surfaces sit back to back: inner against outer lip, eyelid against the lash in front of it, the mouth bag. On the lip corner of the test character it cut wrong-facing writes from 8 of 92 to 2. It has no effect at all while Robust Asymmetric Fallback is on &mdash; that option&rsquo;s promise that nothing disappears overrides these refusals.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Auto-Calculate Tolerance</span>
+        <p>Scales the match radius to the mesh&rsquo;s own edge length instead of a fixed number, so the same setting means the same thing on a low-poly body and a dense face.</p>
+        <p class="cap">Leave it on unless you are chasing a specific failure by hand. Turning it off reveals Precision Tolerance, which is then yours to set and yours to get wrong.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Topological Mirror</span>
+        <p>Walks the mesh&rsquo;s own edge connectivity rather than matching positions in space. The engine behind the posed-rig clip further up.</p>
+        <p class="cap">For posed meshes and shape keys, where the two sides are nowhere near mirrored coordinates. It needs the base topology to be genuinely symmetrical; where it is not, the spatial engine is the one that works.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Auto-Detect Symmetry Mode</span>
+        <p>Tests each group and picks the topological or the spatial engine for it, instead of you choosing once for the whole character.</p>
+        <p class="cap">On by default, and the reason the Topological Mirror toggle is greyed out until you untick it. Untick only when you want to force one engine and watch what it does.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Auto-Detect Direction</span>
+        <p>Reads where the weight actually is before deciding which side is the source, rather than trusting the direction dropdown.</p>
+        <p class="cap">Saves you mirroring an empty side onto a full one. Worth leaving on; the panel still shows you the direction it settled on.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Auto-Detect Counterparts</span>
+        <p>Finds the partner group from the active group&rsquo;s name, covering .L/.R, _L/_R, -L/-R, Left/Right, Lft/Rgt and the matching prefixes.</p>
+        <p class="cap">Untick it to reveal Custom Match Pattern, for a naming convention the built-in table does not cover. A custom pattern is a plain text swap and takes precedence, so set it to your actual convention or leave this ticked.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Mirror in World Space</span>
+        <p>Transforms coordinates and normals into world space before reflecting them.</p>
+        <p class="cap">For objects that are not sitting at a clean origin &mdash; scaled, rotated, or moved off centre. On an object with an identity transform it changes nothing, which is why it has no clip: the test characters are all square to the world.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Use UV Space Mirroring</span>
+        <p>Matches vertices by their UV layout instead of their position in 3D, and derives its tolerance from UV edge length.</p>
+        <p class="cap">For halves that share a mirrored unwrap but do not line up in space. It is the wrong tool for a limb &mdash; measured on three characters it wrote fewer weights than the 3D matcher every time &mdash; and it does not bleed onto UV-less or seam vertices.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Auto-Resolve Mismatches</span>
+        <p>If the first pass leaves mismatches, it runs again with a widened adaptive tolerance rather than handing you the problem.</p>
+        <p class="cap">Useful on meshes where the two sides are close but not exact. It only does anything when the first attempt falls short, which is why it shows no difference on a clean character.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Cache Symmetry Mapping</span>
+        <p>Builds one shared symmetry map per Mirror All run and applies it to every group in the batch.</p>
+        <p class="cap">Leave it on. Off is not a speed-versus-accuracy trade: on a 14,164-vertex, 167-group rig whose weights were already symmetric, on took 1.8 seconds and changed nothing, while off took 119 seconds, rewrote 11 groups and lost 74 weighted vertices outright. It has no effect on a single-group mirror.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Auto-Clean Micro-Noise</span>
+        <p>Strips very small stray weights before the mirror runs.</p>
+        <p class="cap">For meshes carrying leftover dust from earlier edits. Do not pair it with Invert Transferred Weights: cleaning happens first, and a weight of 0.003 is meaningful once inverted, becoming roughly 0.997 on the target. The panel warns you when both are on.</p>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Include Near-Zero Weights</span>
+        <p>Lowers the analysis cutoff from the Minimum Weight Threshold to a fixed 0.000001, so barely-weighted vertices still reach the matcher and the diagnostics.</p>
+        <p class="cap">Turn it on when the balance panel insists a pair is fine and you can see it is not. While it is on the Minimum Weight Threshold is ignored entirely, and the panel greys the field to say so.</p>
+      </div>
+
     </div>
   </section>
 
