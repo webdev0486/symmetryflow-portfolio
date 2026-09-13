@@ -26,10 +26,11 @@ SymmetryFlow is a Blender addon that solves vertex weight mirroring for rigs
 where naive left/right symmetry falls apart — asymmetrical meshes, posed
 characters, and overlapping geometry like lips and eyelids.
 
-**Blender 3.6 through 5.1+, except 5.0.0 and 5.0.1.** Those two releases carry a
-bug in Blender itself: any add-on that highlights vertices and then leaves Weight
-Paint mode closes Blender instantly. It was reproduced with SymmetryFlow
-completely uninstalled, and Blender fixed it in 5.1.
+**Tested on Blender 3.6 LTS, 4.0.0, 4.2.9 LTS, 4.4.0, 4.4.3, 4.5.0 and 5.1.2 —
+not 5.0.0 or 5.0.1.** Those two releases carry a bug in Blender itself: any
+add-on that highlights vertices and then leaves Weight Paint mode closes Blender
+instantly. It was reproduced with SymmetryFlow completely uninstalled, and
+Blender fixed it in 5.1.
 
 ## What the page covers
 
