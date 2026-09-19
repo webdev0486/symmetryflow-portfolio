@@ -276,8 +276,8 @@
            Mirror) is greyed out by default because Auto-Detect Symmetry owns it, and
            a couple sit in adjacent boxes. Counting the code and counting the sidebar
            give different answers, so the page states neither. -->
-      <h2>Five of the options, and what each one changes.</h2>
-      <p class="muted" style="max-width:66ch">Each clip mirrors the same group twice &mdash; once with the box ticked and once without &mdash; so what you are looking at is the difference the option makes. All of it recorded against a live Blender session with the pointer pressing the actual buttons; nothing scripted the result into place.</p>
+      <h2>Four of the options, and what each one changes.</h2>
+      <p class="muted" style="max-width:66ch">Each clip mirrors the same group twice &mdash; once with the box unticked, once with it ticked &mdash; so what you are looking at is the difference the option makes. All of it recorded against a live Blender session with the pointer pressing the actual buttons; nothing scripted the result into place.</p>
     </div>
     <div class="clips">
       <figure>
@@ -308,10 +308,6 @@
         </video>
         <figcaption class="cap"><strong style="color:#b6c0c5">Invert Transferred Weights</strong> writes every mirrored value as 1 &minus; w. The count cannot move, so the change is entirely in the colour: 433 of 438 hold a different value.</figcaption>
       </figure>
-      <figure style="grid-column:1/-1">
-        <img src="assets/site/normal_alignment_lips.gif" width="1400" height="700" loading="lazy" style="width:100%;border-radius:4px;border:1px solid #232a2e;background:#0a0d0e" alt="Verify Normal Alignment on the upper lip: 58 weights mirrored with the box ticked, 62 without">
-        <figcaption class="cap">What this filter refuses usually sits where no camera can see it &mdash; here, the seam where closed lips press together &mdash; so the jaw is nudged until the lower lip pushes through the upper. The pose changes what you can see, not what the filter does. Ticked, <strong style="color:#b6c0c5">Verify Normal Alignment</strong> lets 58 weights across; unticked, 62. The 4 it holds back face the opposite way to the source.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -330,6 +326,26 @@
           <source src="assets/site/restrict_foot.mp4" type="video/mp4">
         </video>
         <figcaption class="cap">L_FOOT to R_FOOT, unticked then ticked &mdash; 852 then 851, and 1,702 vertices left selected behind it.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="two">
+      <div class="stack">
+        <span class="eyebrow">Surfaces that sit back to back</span>
+        <h2>It refuses a surface that faces the wrong way.</h2>
+        <p class="lede">Verify Normal Alignment compares each candidate&rsquo;s normal against the source&rsquo;s mirrored normal and turns away near-opposite pairs, so an outer lip cannot take a weight meant for the inner one. Heavier weights get more latitude, so a strong weight is never dropped over a noisy normal.</p>
+        <p class="muted">What it refuses usually sits where no camera can see it &mdash; here, the seam where closed lips press together. So the jaw is nudged until the lower lip pushes through the upper; the pose changes what you can see, not what the filter does. On the lip corner it cuts wrong-facing writes from 8 of 92 to 2. It has no effect while Robust Asymmetric Fallback is on.</p>
+        <div class="figs">
+          <div><div class="n">62</div><div class="k">UNTICKED</div></div>
+          <div style="align-self:center;color:#3c464c">&rarr;</div>
+          <div><div class="n" style="color:#8ec5f0">58</div><div class="k">TICKED &middot; 4 HELD BACK</div></div>
+        </div>
+      </div>
+      <figure>
+        <img src="assets/site/normal_alignment_lips.gif" width="1400" height="700" loading="lazy" style="width:100%;border-radius:4px;border:1px solid #232a2e;background:#0a0d0e" alt="Verify Normal Alignment on the upper lip: 58 weights mirrored with the box ticked, 62 without">
+        <figcaption class="cap">mFaceLipUpperLeft to mFaceLipUpperRight, ticked then unticked &mdash; 58 then 62.</figcaption>
       </figure>
     </div>
   </section>
