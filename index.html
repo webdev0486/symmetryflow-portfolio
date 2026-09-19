@@ -276,8 +276,8 @@
            Mirror) is greyed out by default because Auto-Detect Symmetry owns it, and
            a couple sit in adjacent boxes. Counting the code and counting the sidebar
            give different answers, so the page states neither. -->
-      <h2>Four of the options, and what each one changes.</h2>
-      <p class="muted" style="max-width:66ch">Each clip mirrors the same group twice &mdash; once with the box unticked, once with it ticked &mdash; so what you are looking at is the difference the option makes. All of it recorded against a live Blender session with the pointer pressing the actual buttons; nothing scripted the result into place.</p>
+      <h2>Five of the options, and what each one changes.</h2>
+      <p class="muted" style="max-width:66ch">Each clip mirrors the same group twice &mdash; once with the box ticked and once without &mdash; so what you are looking at is the difference the option makes. All of it recorded against a live Blender session with the pointer pressing the actual buttons; nothing scripted the result into place.</p>
     </div>
     <div class="clips">
       <figure>
@@ -307,6 +307,10 @@
           <source src="assets/site/invert.mp4" type="video/mp4">
         </video>
         <figcaption class="cap"><strong style="color:#b6c0c5">Invert Transferred Weights</strong> writes every mirrored value as 1 &minus; w. The count cannot move, so the change is entirely in the colour: 433 of 438 hold a different value.</figcaption>
+      </figure>
+      <figure style="grid-column:1/-1">
+        <img src="assets/site/normal_alignment_lips.gif" width="1400" height="700" loading="lazy" style="width:100%;border-radius:4px;border:1px solid #232a2e;background:#0a0d0e" alt="Verify Normal Alignment on the upper lip: 58 weights mirrored with the box ticked, 62 without">
+        <figcaption class="cap">What this filter refuses usually sits where no camera can see it &mdash; here, the seam where closed lips press together &mdash; so the jaw is nudged until the lower lip pushes through the upper. The pose changes what you can see, not what the filter does. Ticked, <strong style="color:#b6c0c5">Verify Normal Alignment</strong> lets 58 weights across; unticked, 62. The 4 it holds back face the opposite way to the source.</figcaption>
       </figure>
     </div>
   </section>
@@ -444,11 +448,6 @@
     </div>
     <div class="three">
 
-      <div class="card">
-        <span class="eyebrow">Verify Normal Alignment</span>
-        <p>Rejects a candidate whose surface faces the opposite way to the source, by comparing its normal against the source&rsquo;s mirrored normal. Heavier weights get more latitude, so a strong weight is never dropped over a noisy normal.</p>
-        <p class="cap">Use it when surfaces sit back to back: inner against outer lip, eyelid against the lash in front of it, the mouth bag. On the lip corner of the test character it cut wrong-facing writes from 8 of 92 to 2. It has no effect at all while Robust Asymmetric Fallback is on &mdash; that option&rsquo;s promise that nothing disappears overrides these refusals.</p>
-      </div>
 
       <div class="card">
         <span class="eyebrow">Auto-Calculate Tolerance</span>
