@@ -333,10 +333,10 @@
   <section>
     <div class="two">
       <div class="stack">
-        <span class="eyebrow">Surfaces that sit back to back</span>
-        <h2>It refuses a surface that faces the wrong way.</h2>
-        <p class="lede">Verify Normal Alignment compares each candidate&rsquo;s normal against the source&rsquo;s mirrored normal and turns away near-opposite pairs, so an outer lip cannot take a weight meant for the inner one. Heavier weights get more latitude, so a strong weight is never dropped over a noisy normal.</p>
-        <p class="muted">What it refuses usually sits where no camera can see it &mdash; here, the seam where closed lips press together. So the jaw is nudged until the lower lip pushes through the upper; the pose changes what you can see, not what the filter does. On the lip corner it cuts wrong-facing writes from 8 of 92 to 2. It has no effect while Robust Asymmetric Fallback is on.</p>
+        <span class="eyebrow">Lips, eyelids, anything that closes</span>
+        <h2>It stops weight leaking onto the surface behind.</h2>
+        <p class="lede">Where two surfaces sit close together &mdash; an upper lip resting on a lower one, an eyelid against its lash &mdash; a mirror can hand weight to the wrong one simply because it is the nearest point. <strong style="color:#b6c0c5">Verify Normal Alignment</strong> checks which way each surface faces and refuses to write onto one facing the opposite way from the source. Strong weights get more leeway, so a noisy surface never costs you a real one.</p>
+        <p class="muted">You normally can&rsquo;t see this happen: the wrong weight lands where the lips press together, hidden inside a closed mouth. To film it, the jaw is nudged until the lower lip pokes through the upper, bringing that hidden surface into view &mdash; moving the jaw only changes what the camera sees, not what gets written. On the lip corner of the same character it cuts wrong-facing weights from 8 of 92 to 2. It does nothing while Robust Asymmetric Fallback is on, because that option promises never to drop a weight.</p>
         <div class="figs">
           <div><div class="n">57</div><div class="k">UNTICKED</div></div>
           <div style="align-self:center;color:#3c464c">&rarr;</div>
